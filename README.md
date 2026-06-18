@@ -74,7 +74,7 @@ cd client
 npm install
 npm run dev
 Environment Variables
-
+/////////////////////////////////////////
 Create .env files inside client and server folders.
 
 Server .env
@@ -82,12 +82,15 @@ PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 OPENROUTER_API_KEY=your_openrouter_api_key
+
+//////////////////////////////////////////
 Client .env
 VITE_SERVER_URL=http://localhost:5000
 VITE_FIREBASE_API_KEY=your_firebase_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
 VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
 VITE_FIREBASE_APP_ID=your_firebase_app_id
+///////////////////////////////////////////
 Future Scope
 Real-time socket notifications
 Email alerts
@@ -96,6 +99,6 @@ Calendar and deadline tracking
 Advanced PDF reports
 Mobile responsive improvements
 Deployment on Render
-Author
 
-Abhishek Kumar
+Author
+Abhishek Kumar......
