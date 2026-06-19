@@ -2,10 +2,10 @@ import bcrypt from "bcryptjs";
 import User from "../models/user.model.js"
 import genToken from "../config/token.js";
 const cookieOptions = {
-    httpOnly:true,
-    secure:false,
-    samesite:"lax",
-    maxAge:7*24*60*60*1000,
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+  maxAge: 7 * 24 * 60 * 60 * 1000,
 };
 //Register
 export const register = async(req,res)=>{
@@ -125,11 +125,11 @@ export const currentUser = async(req,res)=>{
 //Logout
 export const logout = async(req,res)=>{
     try {
-        res.clearCookie("token",{
-            httpOnly:true,
-            secure:false,
-            samesite:"lax"
-        });
+       res.clearCookie("token", {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+});
         return res.status(200).json({message:"successfully logout"});
     } catch (error) {
         return res.status(500).json({message:error.message});
